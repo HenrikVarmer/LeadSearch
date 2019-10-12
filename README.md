@@ -13,7 +13,7 @@ There's one primary function in this package: lead_search()
 
 ### lead_search()
 
-The lead_search() function takes a dataframe as input in tidy (long) format with one observation (name-email pair) per row. The input data.frame must contain two columns: name and email. The data.frame and column names are provided as arguments to the function.
+The lead_search() function takes a dataframe as input in tidy (long) format with one observation (name-email pair) per row. The input data.frame must contain two columns: name and email, and in that particular order (name first, then email)
 
 The lead_search() function returns a dataframe with the names and mails and corresponding best guess for job titles and workplace information along with a likely linkedin profile link. 
 
