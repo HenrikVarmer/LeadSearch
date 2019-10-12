@@ -11,6 +11,12 @@ devtools::install_github('HenrikVarmer/lead_search')
 ### Using the functions
 There's one primary function in this package: lead_search()
 
+To use this function there are some prerequisites: 
+* Google CustomSearch API Key
+* Google CX Key
+
+If you're new to google customsearch, start here: https://developers.google.com/custom-search/v1/overview
+
 ### lead_search()
 
 The lead_search() function takes a dataframe as input in tidy (long) format with one observation (name-email pair) per row. The input data.frame must contain two columns: name and email, and in that particular order (name first, then email)
