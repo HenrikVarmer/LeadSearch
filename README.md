@@ -17,7 +17,7 @@ The lead_search() function takes a dataframe as input in tidy (long) format with
 
 The lead_search() function returns a dataframe with the names and mails and corresponding best guess for job titles and workplace information along with a likely linkedin profile link. 
 
-Input data structure for generating recommendations:
+Input data structure for conducting a lead search:
 
 | name          | mail               |
 | ------------: |-------------------:|
