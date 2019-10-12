@@ -34,17 +34,17 @@ conf    <- read.csv("api_key.csv", sep = ";", stringsAsFactors = FALSE)[1,]
 api_key <- conf$api_key
 cx      <- conf$cx
 
-
+# do lead search
 lead_search(leads, api_key, cx)
 ```
 The output from the above example is a dataframe with title, workplace and LinkedIn profile link as new columns attached to the original dataframe. 
 
-| name          | mail               | title            | workplace |
-| ------------: |-------------------:|-----------------:|----------:|
-| John Doe      | johndoe@gmai.com   | systems engineer | microsoft |
-| Jane Doe      | janedoe@yahoo.com  | astronaut        | space     |
-| Alice         | alice@server.com   | IT supporter     | IT company|
-| Bob           | bob@server.com     | mailman          | US postal |
+| name          | mail               | title            | workplace | linkedin URL |
+| ------------: |-------------------:|-----------------:|----------:|-------------:|
+| John Doe      | johndoe@gmai.com   | systems engineer | microsoft | https://link |
+| Jane Doe      | janedoe@yahoo.com  | astronaut        | space     | https://link |
+| Alice         | alice@server.com   | IT supporter     | IT company| https://link |
+| Bob           | bob@server.com     | mailman          | US postal | https://link |
 
 
 
