@@ -36,9 +36,8 @@ Usage of the function follows the logic in the following code:
 ```R
 # read in local content + API keys
 leads   <- read.csv("leads.csv", sep = ";", stringsAsFactors = FALSE)
-conf    <- read.csv("api_key.csv", sep = ";", stringsAsFactors = FALSE)[1,]
-api_key <- conf$api_key
-cx      <- conf$cx
+api_key <- "your_api_key_here"
+cx      <- "your_cx_key_here"
 
 # do lead search
 lead_search(leads, api_key, cx)
