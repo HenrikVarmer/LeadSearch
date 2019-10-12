@@ -9,7 +9,7 @@ Install the package directly from github with devtools. Run the first line if yo
 devtools::install_github('HenrikVarmer/lead_search')
 ```
 ### Using the functions
-There's one primary function in this package: 
+There's one primary function in this package: lead_search()
 
 ### lead_search()
 
@@ -26,4 +26,27 @@ Input data structure for conducting a lead search:
 | Alice         | alice@server.com   |
 | Bob           | bob@server.com     |
 
+Usage of the function follows the logic in the following code:
 ```R
+# read in local content + API keys
+leads   <- read.csv("leads.csv", sep = ";", stringsAsFactors = FALSE)
+conf    <- read.csv("api_key.csv", sep = ";", stringsAsFactors = FALSE)[1,]
+api_key <- conf$api_key
+cx      <- conf$cx
+
+
+lead_search(leads, api_key, cx)
+```
+The output from the above example is a dataframe with title, workplace and LinkedIn profile link as new columns attached to the original dataframe. 
+
+| name          | mail               | title            | workplace |
+| ------------: |-------------------:|-----------------:|----------:|
+| John Doe      | johndoe@gmai.com   | systems engineer | microsoft |
+| Jane Doe      | janedoe@yahoo.com  | astronaut        | space     |
+| Alice         | alice@server.com   | IT supporter     | IT company|
+| Bob           | bob@server.com     | mailman          | US postal |
+
+
+
+
+
