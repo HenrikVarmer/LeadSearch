@@ -6,7 +6,7 @@ query <- function(api_key, cx, name, mail) {
   name    <- gsub(" ", "+", name)
   info    <- c()
   
-  if (any(grepl(company, c("gmail", "hotmail")))) {
+  if (any(grepl(company, c("gmail", "hotmail", "")))) {
     query_string <- paste("https://www.googleapis.com/customsearch/v1?key=", 
                           api_key, "&cx=", cx, "&q=", "site:linkedin.com+", 
                           name, sep = "")
@@ -52,3 +52,6 @@ query <- function(api_key, cx, name, mail) {
   return(info)
   
 }
+
+
+

@@ -1,0 +1,10 @@
+Package: leadsearch
+Title: Gets Probable LinkedIn URLs and Job Descriptions
+Version: 0.0.0.9000
+Authors@R: person("Henrik", "Varmer", email = "henrik@varmer.dk", role = c("aut", "cre"))
+Description: A small script which utilizes google's customsearch API to fetch likely job titles, workplaces and LinkedIn profile links, given an input dataframe containing names and e-mails.
+Depends: R (>= 3.4.3)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

@@ -3,8 +3,10 @@
 library(stringr)
 library(httr)
 library(dplyr)
-source("./query.R")
-source("./lead_search.R")
+source("./R/query.R")
+source("./R/lead_search.R")
+library(leadsearch)
+
 
 # read in local content + API keys
 leads   <- read.csv("leads.csv", sep = ";", stringsAsFactors = FALSE)
@@ -17,5 +19,4 @@ cx      <- conf$cx
 lead_search(leads, api_key, cx)
 
 
-query(api_key, cx, name, mail)
 
