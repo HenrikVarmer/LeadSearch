@@ -1,20 +1,41 @@
 
 
 
-lead_search <- function(x, api_key, cx) {
+lead_search <- function(x, engine = "google", api_key, cx) {
 
-  y <- x[,1]
-  z <- x[,2]
+  if(engine == "bing") {
 
-  info <- mapply(query, api_key, cx, y, z)
+    y <- x[,1]
+    z <- x[,2]
 
-  t <- as.data.frame(info, stringsAsFactors = FALSE)
+    info <- mapply(b_query, api_key, cx, y, z)
+
+    t <- as.data.frame(info, stringsAsFactors = FALSE)
 
 
-  x$tite        <- (t["title", , drop = TRUE])
-  x$workplace   <- (t["workplace", , drop = TRUE])
-  x$link        <- (t["link", , drop = TRUE])
+    x$tite        <- (t["title", ,     drop = TRUE])
+    x$workplace   <- (t["workplace", , drop = TRUE])
+    x$link        <- (t["link", ,      drop = TRUE])
+
+  } else if(engine == "google") {
+
+    y <- x[,1]
+    z <- x[,2]
+
+    info <- mapply(g_query, api_key, cx, y, z)
+
+    t <- as.data.frame(info, stringsAsFactors = FALSE)
+
+
+    x$tite        <- (t["title", ,     drop = TRUE])
+    x$workplace   <- (t["workplace", , drop = TRUE])
+    x$link        <- (t["link", ,      drop = TRUE])
+
+
+  }
 
   return(x)
 
 }
+
+
