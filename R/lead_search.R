@@ -13,7 +13,7 @@ lead_search <- function(x, engine = "google", api_key, cx) {
     t <- as.data.frame(info, stringsAsFactors = FALSE)
 
 
-    x$tite        <- (t["title", ,     drop = TRUE])
+    x$title       <- (t["title", ,     drop = TRUE])
     x$workplace   <- (t["workplace", , drop = TRUE])
     x$link        <- (t["link", ,      drop = TRUE])
 
@@ -27,7 +27,7 @@ lead_search <- function(x, engine = "google", api_key, cx) {
     t <- as.data.frame(info, stringsAsFactors = FALSE)
 
 
-    x$tite        <- (t["title", ,     drop = TRUE])
+    x$title       <- (t["title", ,     drop = TRUE])
     x$workplace   <- (t["workplace", , drop = TRUE])
     x$link        <- (t["link", ,      drop = TRUE])
 

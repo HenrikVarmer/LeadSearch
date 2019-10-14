@@ -40,9 +40,9 @@ g_query <- function(api_key, cx, name, mail) {
                                      " | ", simplify = TRUE)[,1]
       info["link"]      <- content(GET(query_string))$items[[1]]$link
 
-    } else if (grepl("[\u2013:\u2018]", result)) {
-      info["title"]     <- str_split(result, " [\u2013:\u2018] ", simplify = TRUE)[,2]
-      info["workplace"] <- str_split(str_split(result, " [\u2013:\u2018] ", simplify = TRUE)[,3],
+    } else if (grepl("[\u2013:\u2015]", result)) {
+      info["title"]     <- str_split(result, " [\u2013:\u2015] ", simplify = TRUE)[,2]
+      info["workplace"] <- str_split(str_split(result, " [\u2013:\u2015] ", simplify = TRUE)[,3],
                                      " | ", simplify = TRUE)[,1]
       info["link"]      <- content(GET(query_string))$items[[1]]$link
     } else
