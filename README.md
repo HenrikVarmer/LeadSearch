@@ -1,7 +1,7 @@
-# lead_search
-Utilizes google's customsearch API to fetch likely job titles, workplaces and LinkedIn profile links, given an input dataframe containing names and e-mails
+# LeadSearch
+A small script which utilizes google's customsearch API to fetch likely job titles, workplaces and LinkedIn profile links, given an input dataframe containing names and e-mails. 
 
-### Installing lead_search
+### Installing LeadSearch
 Install the package directly from github with devtools. Run the first line if you do not currently have devtools installed.
 
 ```R
