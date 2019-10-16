@@ -34,6 +34,10 @@ lead_search <- function(x, engine = "google", api_key, cx) {
 
   }
 
+  x$title     <- vapply(g$title, paste, collapse = ", ", character(1L))
+  x$workplace <- vapply(g$workplace, paste, collapse = ", ", character(1L))
+  x$link      <- vapply(g$link, paste, collapse = ", ", character(1L))
+
   return(x)
 
 }

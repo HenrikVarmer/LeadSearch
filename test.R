@@ -17,24 +17,17 @@ b_api_key <- conf$b_api_key
 g_cx      <- conf$cx
 b_cx      <- conf$b_cx
 
+x <- leads[1:100,]
 
 #lead_search(x, engine = "google", g_api_key, g_cx)
 
-
-lead_search(x, engine = "bing", b_api_key, b_cx)
-
-
-name <- leads$navn[1]
-mail <- leads$mail[1]
-name
-mail
+started <- Sys.time()
+g <- lead_search(leads, engine = "bing", b_api_key, b_cx)
+ended <- Sys.time()
+ended - started
+head(g)
 
 
-b_query(b_api_key, b_cx, name, mail)
 
 
-x <- head(leads, 10)
-
-y <- x[,1]
-z <- x[,2]
-mapply(b_query, b_api_key, b_cx, y, z)
+write.csv(g, file = "test.csv", row.names =FALSE, sep = ";")
