@@ -6,7 +6,7 @@ Install the package directly from github with devtools. Run the first line if yo
 
 ```R
 # install.packages('devtools') 
-devtools::install_github('HenrikVarmer/lead_search')
+devtools::install_github('HenrikVarmer/LeadSearch')
 ```
 ### Using the functions
 There's one primary function in this package: lead_search()
