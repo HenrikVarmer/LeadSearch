@@ -12,8 +12,8 @@ devtools::install_github('HenrikVarmer/LeadSearch')
 There's one primary function in this package: lead_search()
 
 To use this function there are some prerequisites: 
-* Google CustomSearch API Key
-* Google CX Key
+* Google / Bing CustomSearch API Key
+* Google / Bing Context Key
 
 If you're new to google customsearch, start here: https://developers.google.com/custom-search/v1/overview
 
