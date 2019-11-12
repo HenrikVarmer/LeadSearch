@@ -8,7 +8,9 @@ b_query <- function(b_api_key, b_cx, name, mail) {
   name       <- URLencode(stri_enc_toutf8(name))
   info       <- c()
 
-  if (any(grepl(tolower(company), c("gmail", "hotmail", ""))) | mail == "" | company = "") {
+  if (any(grepl(tolower(company), c("gmail", "hotmail", "yahoo", "outlook", "jubii", "msn", "netmail",
+                                    "stofanet", "post",
+                                    ""))) | mail == "" | company == "") {
     query_string <- paste("https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?q=site%3Alinkedin.com%2Fin%2F%20",
                           name, "&customconfig=", b_cx, "&mkt=da-DK", sep = "")
   } else {
@@ -37,7 +39,7 @@ b_query <- function(b_api_key, b_cx, name, mail) {
     result <- content(httr::GET(url = query_string,
                                   add_headers("Ocp-Apim-Subscription-Key" = b_api_key)))$webPages$value[[1]]$name
 
-    if(str_replace(name_origi, "\\p{Pd}", "GARBAGEDATA") != name_origi) {
+    if((str_replace(name_origi, "\\p{Pd}", "GARBAGEDATA") != name_origi) == TRUE) {
 
     temp_cle <- str_replace(result,
       str_split(
