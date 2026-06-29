@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 *.csv
-test.R
+inst/doc
+docs
