@@ -147,8 +147,8 @@ parse_google_title <- function(result) {
 
   if (grepl(" - ", result, fixed = TRUE)) {
     split_on(" - ")
-  } else if (grepl("[–:―]", result)) {
-    split_on(" [–:―] ")
+  } else if (grepl("[\u2013:\u2015]", result)) {
+    split_on(" [\u2013:\u2015] ")
   } else {
     list(title = "error", workplace = "error")
   }
